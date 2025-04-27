@@ -1,26 +1,52 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app-container">
+    <Transition name="fade" mode="out-in">
+      <component
+        :is="currentComponent"
+        @decline="step = 'video'"
+        @ended="step = 'cards'"
+      />
+    </Transition>
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { ref, computed } from 'vue'
+import DialogBox from './components/DialogBox.vue'
+import VideoPlayer from './components/VideoPlayer.vue'
+import CardGallery from './components/CardGallery.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+const step = ref('cards')
+
+const currentComponent = computed(() => {
+  if (step.value === 'dialog') return DialogBox
+  if (step.value === 'video') return VideoPlayer
+  if (step.value === 'cards') return CardGallery
+  return null
+})
 </script>
 
+<style scoped>
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+}
+
+/* Transição fade */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+</style>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+  font-family: system-ui;
 }
 </style>
