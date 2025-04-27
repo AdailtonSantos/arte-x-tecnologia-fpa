@@ -16,7 +16,7 @@ import DialogBox from './components/DialogBox.vue'
 import VideoPlayer from './components/VideoPlayer.vue'
 import CardGallery from './components/CardGallery.vue'
 
-const step = ref('cards')
+const step = ref('dialog')
 
 const currentComponent = computed(() => {
   if (step.value === 'dialog') return DialogBox
