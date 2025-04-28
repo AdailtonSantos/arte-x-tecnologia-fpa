@@ -21,10 +21,10 @@
 import { ref } from 'vue'
 
 const cards = [
-  { img: 'arte1.jpeg', text: 'Arte 1' },
+  { img: 'Izabella Zanon.jpeg', text: 'Izabella Zanon' },
   { img: 'Stephany Santos.jpeg', text: 'Stephany Santos' },
-  { img: 'arte3.jpeg', text: 'Arte 3' },
-  { img: 'arte4.jpeg', text: 'Arte 4' },
+  { img: 'Malú Carvalho.jpeg', text: 'Malú Carvalho' },
+  { img: 'Thábata Steidl.jpeg', text: 'Thábata Steidl' },
   { img: 'Elen Angelina.jpeg', text: 'Elen Angelina' },
   { img: 'Giovanna Rinaldi.jpeg', text: 'Giovanna Rinaldi' }
 ]
