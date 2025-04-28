@@ -1,6 +1,9 @@
 <template>
-  <div class="gallery-container">
-    <div v-for="(card, index) in cards" :key="index" class="card" @click="openCard(card)">
+  <section style="text-align: center;">
+    <img src="referencia.jpeg" alt=""><br>
+    <span><b>Autora:</b> Anita Malfatti</span>
+    <div class="gallery-container">
+      <div v-for="(card, index) in cards" :key="index" class="card" @click="openCard(card)">
       <img :src="card.img" class="card-img" />
       <p class="card-text"><b>{{ card.text }}</b></p>
     </div>
@@ -15,6 +18,7 @@
       </div>
     </div>
   </div>
+</section>
 </template>
 
 <script setup>
